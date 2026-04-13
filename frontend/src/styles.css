@@ -1,0 +1,89 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #e8eefc;
+  background: #081120;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #88b4ff; text-decoration: none; }
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  background: #2d6cdf;
+  color: white;
+  font-weight: 600;
+}
+input {
+  width: 100%;
+  border: 1px solid #29415e;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  background: #0f1c2f;
+  color: white;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.topbar nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.card {
+  background: #10213a;
+  border: 1px solid #203859;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.auth-card {
+  max-width: 460px;
+  margin: 3rem auto;
+}
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+.dashboard-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.result-box, .history-item {
+  background: #0b1729;
+  border: 1px solid #203859;
+  border-radius: 14px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.history-list {
+  display: grid;
+  gap: 0.75rem;
+}
+.history-item {
+  display: grid;
+  gap: 0.35rem;
+}
+.user-badge {
+  background: #16325c;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+}
+.error-text {
+  color: #ff8d8d;
+}

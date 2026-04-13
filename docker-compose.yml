@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: solar-watch-db
+    environment:
+      POSTGRES_DB: solar_watch
+      POSTGRES_USER: solar
+      POSTGRES_PASSWORD: solar
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U solar -d solar_watch"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: solar-watch-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/solar_watch
+      SPRING_DATASOURCE_USERNAME: solar
+      SPRING_DATASOURCE_PASSWORD: solar
+      APP_CORS_ALLOWED_ORIGIN: http://localhost:5173
+      APP_JWT_SECRET: VGhpc0lzQVN1ZmZpY2llbnRseUxvbmdCYXNlNjRTZWNyZXRGb3JKV1QxMjM0NTY3ODkw
+      APP_JWT_EXPIRATION_MS: 86400000
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: solar-watch-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
