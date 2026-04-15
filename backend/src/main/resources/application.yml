@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/solar_watch}
-    username: ${SPRING_DATASOURCE_USERNAME:solar}
-    password: ${SPRING_DATASOURCE_PASSWORD:solar}
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,7 +21,7 @@ app:
   cors:
     allowed-origin: ${APP_CORS_ALLOWED_ORIGIN:http://localhost:5173}
   jwt:
-    secret: ${APP_JWT_SECRET:VGhpc0lzQVN1ZmZpY2llbnRseUxvbmdCYXNlNjRTZWNyZXRGb3JKV1QxMjM0NTY3ODkw}
+    secret: ${APP_JWT_SECRET}
     expiration-ms: ${APP_JWT_EXPIRATION_MS:86400000}
   api:
     open-meteo-geocoding-url: ${APP_GEOCODING_URL:https://geocoding-api.open-meteo.com/v1/search}
