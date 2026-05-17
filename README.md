@@ -158,10 +158,10 @@ Example response:
 
 Planned improvements:
 
-- [ ] Favorites and saved cities
-- [ ] Geolocation support
-- [ ] Weather forecast integration
-- [ ] Unit and timezone settings
+- Favorites and saved cities
+- Geolocation support
+- Weather forecast integration
+- Unit and timezone settings
 
 ---
 
