@@ -1,13 +1,13 @@
 Features
 
--Search sunrise and sunset times by city
--Select custom dates
--Worldwide city support
--Fast API-based data retrieval
--User authentication support (if implemented)
--Responsive design for desktop and mobile
--Weather and solar data integration
--Clean and modern UI
+  -Search sunrise and sunset times by city
+  -Select custom dates
+  -Worldwide city support
+  -Fast API-based data retrieval
+  -User authentication support (if implemented)
+  -Responsive design for desktop and mobile
+  -Weather and solar data integration
+  -Clean and modern UI
 
 Frontend
 
